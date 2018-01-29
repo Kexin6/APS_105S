@@ -1,18 +1,23 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int main(int argc, char **argv)
 {
 	//Declare variables as integers
-	int centNumber, centNumber2, nickelNumber, dimeNumber, quarterNumber;
+	int centNumber, centOutput, nickelNumber, dimeNumber, quarterNumber;
+	//To determine whether to use a coma or not
+	bool comma = false;
 	
 	//Use while loop to achieve user testing for several times
 	while (1) {
 		printf ("Please give an amount in cents less than 100: ");
 		scanf ("%d", &centNumber);
+		// Set comma to false again in order to begin a new loop with correct commas
+		comma = false;
 		
 		// The way to quit the while loop and end the program is typing a number less than 0 or greater than 99
 		if (centNumber >= 100 || centNumber <= 0) {
-			printf ("Goodbye\n");
+			printf ("Goodbye.\n");
 			return 0;
 		}
 		printf ("%d cents: ", centNumber);
@@ -21,68 +26,66 @@ int main(int argc, char **argv)
 		quarterNumber = centNumber / 25;
 		dimeNumber = (centNumber - (25 * quarterNumber)) / 10;
 		nickelNumber = (centNumber - (25 * quarterNumber + 10 * dimeNumber)) / 5;
-		centNumber2 = centNumber - (25 * quarterNumber + 10 * dimeNumber +5 * nickelNumber);
+		centOutput = centNumber - (25 * quarterNumber + 10 * dimeNumber +5 * nickelNumber);
 		
-		//Different situations in printing quarter based on whether it is 0, 1 or others
+		//Different situations in printing quarter based on whether it is 1 or others
 		if (quarterNumber == 1) {
-			if (centNumber == 25) {
-				printf ("%d quarter.", quarterNumber);
-			} else {
-				printf ("%d quarter, ", quarterNumber);
-			}
-		} else if (quarterNumber == 0) {
-			;
-		} else {
-			if (centNumber == 50 || centNumber == 75){
-				printf ("%d quarters.", quarterNumber);
-			} else {
-				printf ("%d quarters, ", quarterNumber);
-			}
+			printf ("%d quarter", quarterNumber);
+			//For the next currency, comma is always true
+			comma = true;
+		} else if (quarterNumber > 1) {
+			printf ("%d quarters", quarterNumber);
+			comma = true;
 		}
 		
-		//Different situations in printing dime based on whether it is 0, 1 or others
+		//Different situations in printing dime based on whether it is 1 or others
 		if (dimeNumber == 1) {
-			if (centNumber == 10) {
-				printf ("%d dime.", dimeNumber);
-			} else {
-				printf ("%d dime, ", dimeNumber);
+			//According to the previous situation, if comma is true, it will print out ", "
+			if (comma == true) {
+				printf (", ");
 			}
-		} else if (dimeNumber == 0) {
-			;
-		} else {
-			if (centNumber == 20 || centNumber == 30 || centNumber == 40 || centNumber == 60 || centNumber == 70 || centNumber == 80 || centNumber == 90) {
-				printf ("%d dimes.", dimeNumber);
-			} else {
-				printf ("%d dimes, ", dimeNumber);
+			printf ("%d dime", dimeNumber);
+			comma = true;
+		} else if (dimeNumber >1) {
+			if (comma == true) {
+				printf (", ");
 			}
+			printf ("%d dimes", dimeNumber);
+			comma = true;
 		}
 		
-		//Different situations in printing nickel based on whether it is 0, 1 or others
+		//Different situations in printing nickel based on whether it is 1 or others
 		if (nickelNumber == 1) {
-			if (centNumber == 5) {
-				printf ("%d nickel.", nickelNumber);
-			} else {
-				printf ("%d nickel, ", nickelNumber);
+			if (comma == true) {
+				printf (", ");
 			}
-		} else if (nickelNumber == 0) {
-			;
-		} else {
-			if (centNumber == 15 || centNumber == 35 || centNumber == 45 || centNumber == 55 || centNumber == 65 || centNumber == 85 || centNumber == 95) {
-				printf ("%d nickels.", nickelNumber);
-			} else {
-				printf ("%d nickels, ", nickelNumber);
+			printf ("%d nickel", nickelNumber);
+			comma = true;
+		} else if (nickelNumber > 1) {
+			if (comma == true) {
+				printf (", ");
 			}
+			printf ("%d nickels", nickelNumber);
+			comma = true;
 		}
 		
-		//Different situations in printing cent based on whether it is 0, 1 or others
-		if (centNumber2 == 1) {
-			printf ("%d cent.", centNumber2);
-		} else if (centNumber2 == 0) {
-			;
-		} else {
-			printf ("%d cents.", centNumber2);
+		//Different situations in printing cent based on whether it is 1 or others
+		if (centOutput == 1) {
+			if (comma == true) {
+				printf (", ");
+			}
+			printf ("%d cent", centOutput);
+			comma = true;
+		} else if (centOutput > 1 ) {
+			if (comma == true) {
+				printf (", ");
+			}
+			printf ("%d cents", centOutput);
+			comma = true;
 		}
-		printf ("\n");	
+		
+		//Print out dot and new line character since there is nothing following
+		printf (".\n");	
 	}
 	
 	return 0;
