@@ -14,15 +14,15 @@ int main(int argc, char **argv)
 	printf ("Enter B for conversion of Binary to Decimal, OR\nEnter D for conversion of Decimal to Binary: ");
 	scanf ("%c", &charInput);
 	if (charInput == 'B') {
-		printf ("Enter you number: ");
+		printf ("Enter your number: ");
 		scanf ("%d", &intInput);
 		printf ("%d in binary = %d in decimal\n", intInput, convertBinaryToDecimal(intInput));
 	} else if (charInput == 'D') {
-		printf ("Enter you number: ");
+		printf ("Enter your number: ");
 		scanf ("%d", &intInput);
 		printf ("%d in decimal = %d in binary\n", intInput, convertDecimalToBinary(intInput));
 	} else {
-		printf ("Enter you number: Invalid input; Goodbye\n");
+		printf ("Enter your number: Invalid input; Goodbye\n");
 	}
 	return 0;
 }
@@ -74,5 +74,6 @@ int convertDecimalToBinary (int intInput) {
 		quotient = intInput / 2;
 		remainder = intInput % 2;
 		intInput = intInput - quotient;
-		printf ("%d", remainder);*/
+		printf ("%d", remainder);
+		 * first digit * 1 second * 10 etc. */
 		
