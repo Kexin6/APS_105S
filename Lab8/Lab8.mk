@@ -3,10 +3,10 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=Lab6
+ProjectName            :=Lab8
 ConfigurationName      :=Debug
 WorkspacePath          :=/Users/kexinli/Documents/APS105
-ProjectPath            :=/Users/kexinli/Documents/APS105/Lab6
+ProjectPath            :=/Users/kexinli/Documents/APS105/Lab8
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
@@ -32,7 +32,7 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="Lab6.txt"
+ObjectsFileList        :="Lab8.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
 LinkOptions            :=  
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/private/var/folders/by/2y0ffw7d1xq0pln6pgy6_c2h0000gn/T/AppTranslocation/2B59021F-3E6E-46E4-9651-72C69C22BEC4/d/codelite.app/Contents/SharedSupport/
-Objects0=$(IntermediateDirectory)/Lab6.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/Lab8.c$(ObjectSuffix) 
 
 
 
@@ -91,13 +91,13 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/Lab6.c$(ObjectSuffix): Lab6.c $(IntermediateDirectory)/Lab6.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/Users/kexinli/Documents/APS105/Lab6/Lab6.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Lab6.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Lab6.c$(DependSuffix): Lab6.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Lab6.c$(ObjectSuffix) -MF$(IntermediateDirectory)/Lab6.c$(DependSuffix) -MM Lab6.c
+$(IntermediateDirectory)/Lab8.c$(ObjectSuffix): Lab8.c $(IntermediateDirectory)/Lab8.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/Users/kexinli/Documents/APS105/Lab8/Lab8.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Lab8.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Lab8.c$(DependSuffix): Lab8.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Lab8.c$(ObjectSuffix) -MF$(IntermediateDirectory)/Lab8.c$(DependSuffix) -MM Lab8.c
 
-$(IntermediateDirectory)/Lab6.c$(PreprocessSuffix): Lab6.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Lab6.c$(PreprocessSuffix) Lab6.c
+$(IntermediateDirectory)/Lab8.c$(PreprocessSuffix): Lab8.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Lab8.c$(PreprocessSuffix) Lab8.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

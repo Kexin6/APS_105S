@@ -3,17 +3,17 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=Lab6
+ProjectName            :=Lab7
 ConfigurationName      :=Debug
 WorkspacePath          :=/Users/kexinli/Documents/APS105
-ProjectPath            :=/Users/kexinli/Documents/APS105/Lab6
+ProjectPath            :=/Users/kexinli/Documents/APS105/Lab7
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Kexin Li
-Date                   :=08/05/2018
+Date                   :=15/05/2018
 CodeLitePath           :="/Users/kexinli/Library/Application Support/codelite"
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -dynamiclib -fPIC
@@ -32,7 +32,7 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="Lab6.txt"
+ObjectsFileList        :="Lab7.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
 LinkOptions            :=  
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/private/var/folders/by/2y0ffw7d1xq0pln6pgy6_c2h0000gn/T/AppTranslocation/2B59021F-3E6E-46E4-9651-72C69C22BEC4/d/codelite.app/Contents/SharedSupport/
-Objects0=$(IntermediateDirectory)/Lab6.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/Lab7Part2.c$(ObjectSuffix) 
 
 
 
@@ -91,13 +91,13 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/Lab6.c$(ObjectSuffix): Lab6.c $(IntermediateDirectory)/Lab6.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/Users/kexinli/Documents/APS105/Lab6/Lab6.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Lab6.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Lab6.c$(DependSuffix): Lab6.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Lab6.c$(ObjectSuffix) -MF$(IntermediateDirectory)/Lab6.c$(DependSuffix) -MM Lab6.c
+$(IntermediateDirectory)/Lab7Part2.c$(ObjectSuffix): Lab7Part2.c $(IntermediateDirectory)/Lab7Part2.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/Users/kexinli/Documents/APS105/Lab7/Lab7Part2.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Lab7Part2.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Lab7Part2.c$(DependSuffix): Lab7Part2.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Lab7Part2.c$(ObjectSuffix) -MF$(IntermediateDirectory)/Lab7Part2.c$(DependSuffix) -MM Lab7Part2.c
 
-$(IntermediateDirectory)/Lab6.c$(PreprocessSuffix): Lab6.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Lab6.c$(PreprocessSuffix) Lab6.c
+$(IntermediateDirectory)/Lab7Part2.c$(PreprocessSuffix): Lab7Part2.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Lab7Part2.c$(PreprocessSuffix) Lab7Part2.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

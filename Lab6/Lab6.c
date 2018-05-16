@@ -203,13 +203,14 @@ bool isThereAMove(char board[][26], int dimension, char color) {
 void reverseInDirection(char board[][26], int dimension, char row, char col, char color, int deltaRow, int deltaCol) {
 	bool check = checkLegalInDirection(board, dimension, row, col, color, deltaRow, deltaCol);
 	if (check == true) {
-		while (board[(int) row -97][(int) col -97] != color) {
+		while (board[(int) row - 97][(int) col - 97] != color) {
 			board[(int) row - 97][(int) col - 97] = color;
 			row += deltaRow;
 			col += deltaCol;
 		}
 	}
 }
+
 
 //It reverses the chess in all possible directions
 void reverseEightDirections(char board[][26], int dimension, char row, char col, char color) {
